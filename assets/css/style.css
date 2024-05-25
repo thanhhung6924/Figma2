@@ -146,7 +146,6 @@ a {
   border: 1px solid #1ebfc1;
 }
 .header.fixed {
-  background-color: rgb(255, 255, 255);
   z-index: 1;
   position: sticky;
   top: -40px;
@@ -242,6 +241,20 @@ a {
   box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.05);
   top: 149px;
   left: -40px;
+  animation: appear 0.5s forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+@-webkit-keyframes appear {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 .bodyhero .right .first p {
   margin-left: 16px;
@@ -273,8 +286,17 @@ a {
   flex-direction: column;
   align-items: center;
   box-shadow: 0px 10px 80px 0px rgba(0, 0, 0, 0.05);
+  animation: up 0.5s forwards;
 }
 
+@-webkit-keyframes up {
+  0% {
+    transform: translateY(200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .bodyhero .right .second .father {
   border-radius: 5px;
   display: flex;
@@ -339,9 +361,38 @@ a {
 }
 .bodyhero .right .avt .avata1 {
   background-color: orangered;
+  animation: avt1 1.5s forwards;
+}
+.bodyhero .right .avt .avata3 {
+  animation: avt3 1s forwards;
+}
+@keyframes avt1 {
+  0% {
+    transform: translate(-100px, -100px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes avt2 {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes avt3 {
+  0% {
+    transform: translate(100px, -100px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 .bodyhero .right .avt .avata2 {
   background-color: orange;
+  animation: avt2 2s forwards;
 }
 .bodyhero .right .avt .K10 {
   border-radius: 24px;
@@ -352,6 +403,15 @@ a {
   height: 33px;
   margin-left: -10px;
   background-color: #ff808b;
+  animation: K10 1s forwards;
+}
+@keyframes K10 {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 .bodyhero .right .avt .K10 p {
   color: #fff;
@@ -592,26 +652,42 @@ a {
   padding-top: 300px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
-.feedback .bodyfeedback .rightfeedback .avtfeedback5 {
-  width: 235px;
-  height: 235px;
+.fb5 {
+  background-color: #bd33a6;
   position: absolute;
-  top: 100px;
-  right: 120px;
-  background-color: #ff808b;
+  height: 200px;
+  width: 200px;
+  top: 420px;
+  left: 690px;
+  border-radius: 100%;
 }
 .feedback .bodyfeedback .rightfeedback .avtfeedback4 {
   width: 110px;
   height: 110px;
   background-color: orangered;
 }
+
+.feedback .bodyfeedback .rightfeedback {
+  animation: rtt 10s linear infinite;
+}
+@-webkit-keyframes rtt {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .feedback .bodyfeedback .rightfeedback .avtfeedback3 {
   width: 92px;
   height: 92px;
   background-color: #2ac9bf;
   position: absolute;
   right: 0px;
+  animation: dichuyen 5s linear infinite;
 }
 
 .feedback .bodyfeedback .rightfeedback .avtfeedback2 {
@@ -620,6 +696,7 @@ a {
   background-color: #5cc92a;
   top: 300px;
   position: absolute;
+  animation: dichuyen 2s linear infinite;
 }
 .feedback .bodyfeedback .rightfeedback .avtfeedback6 {
   width: 92px;
@@ -628,6 +705,18 @@ a {
   top: 300px;
   right: 0;
   background-color: #2a81c9;
+  animation: dichuyen 2s linear infinite;
+}
+@-webkit-keyframes dichuyen {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(40px, 40px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
 }
 .feedback .bodyfeedback .rightfeedback .avtfeedback {
   border-radius: 999px;
